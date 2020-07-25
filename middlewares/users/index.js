@@ -1,12 +1,8 @@
-var express = require('express')
-var router = express.Router()
+const express = require('express')
+const router = express.Router()
+const User = require('./controller')
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.status(200).send({
-    title: 'Get all users',
-    users: ['Juki', 'Ahmad'],
-  })
-})
+router.get('/', User.getAll)
 
 module.exports = router
