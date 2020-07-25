@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "postinstall": "./setup.sh"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
