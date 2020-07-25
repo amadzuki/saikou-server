@@ -1,0 +1,15 @@
+### Get users
+GET http://localhost:3000/users 
+
+
+
+### Register new user
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email": "me@marzuki.com",
+    "password": "saikoucreator"
+}
+
+
