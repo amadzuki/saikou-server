@@ -8,6 +8,7 @@ const cors = require('cors')
 
 const indexRouter = require('./middlewares/index')
 const usersRouter = require('./middlewares/users/index')
+const authRouter = require('./middlewares/auth/index')
 
 const app = express()
 
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
+app.use('/auth', authRouter)
 
 // error handler
 app.use(function (err, req, res, next) {

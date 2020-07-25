@@ -5,7 +5,7 @@ const UserSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      required: true,
+      // required: true,
       min: 2,
       max: 50,
     },
@@ -15,13 +15,12 @@ const UserSchema = new mongoose.Schema(
       min: 3,
       max: 50,
     },
-    salt: {
+    hash: {
       type: String,
       required: true,
     },
-    password: {
+    avatar: {
       type: String,
-      required: true,
     },
   },
   {
