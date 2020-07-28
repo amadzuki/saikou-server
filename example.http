@@ -21,3 +21,9 @@ Content-Type: application/json
     "email": "me@marzuki.com",
     "password": "saikoucreator"
 }
+
+
+### Logout
+POST http://localhost:3000/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjFiNzhiNTg2NGI4NzliZDZjNDAyNWEiLCJpZCI6MSwiZW1haWwiOiJtZUBtYXJ6dWtpLmNvbSIsImlhdCI6MTU5NTk1MjU4MiwiZXhwIjoxNTk2MjExNzgyfQ.ZojJ9kJLKgtOgDpKSLzPJkOaQZw1xz25e5oi1do_koo
+
