@@ -10,6 +10,14 @@ Saikou back end server
 | ----- | -------- | ----------------- |
 | `GET` | `/`      | Show info message |
 
+### Auth
+
+| Endpoint         | HTTP   | Description                   |
+| ---------------- | ------ | ----------------------------- |
+| `/auth/register` | `POST` | Register new user             |
+| `/auth/login`    | `POST` | Login to existing user        |
+| `/auth/logout`   | `POST` | Logout the authenticated user |
+
 ### Users
 
 | HTTP     | Endpoint     | Description       |
