@@ -19,10 +19,14 @@ const authenticate = async (req, res, next) => {
         if (err) {
           res.status(400).send({ message: 'Token creation is failed' })
         }
-        res.status(200).send({
-          message: 'User is successfully authenticated',
-          accessToken: result,
-        })
+
+        res
+          .status(200)
+          .cookie('accessToken', result, { htppOnly: true, secure: true })
+          .send({
+            message: 'User is successfully authenticated',
+            accessToken: result,
+          })
       }
     )
   } else {
