@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 
-const isAuthenticated = async (req, res, next) => {
+const isAuthorized = async (req, res, next) => {
   try {
     const accessToken = req.headers.authorization.split(' ')[1]
     if (accessToken) {
@@ -18,10 +18,10 @@ const isAuthenticated = async (req, res, next) => {
   } catch (error) {
     console.error(error)
     res.status(400).send({
-      message: 'The user is unable to authenticate',
+      message: 'The user is unable to authorize',
       error: 'Token is not provided in the Authorization header',
     })
   }
 }
 
-module.exports = isAuthenticated
+module.exports = isAuthorized

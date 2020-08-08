@@ -12,7 +12,6 @@ module.exports = {
       const user = await User.findOne({ id: userId })
 
       const userData = {
-        _id: user._id,
         id: user.id,
         alias: user.alias,
         avatar: user.avatar,
@@ -27,5 +26,15 @@ module.exports = {
       console.error(error)
       res.status(500).send({ message: 'Database error' })
     }
+  },
+
+  getUserProfile: async (req, res, next) => {
+    const mongoId = req.decodedAccessToken._id
+    const userProfile = await User.findById(mongoId)
+
+    res.status(200).send({
+      message: 'Token authorized successfully',
+      data: userProfile,
+    })
   },
 }
