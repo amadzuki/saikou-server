@@ -18,12 +18,12 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email": "me@marzuki.com",
+    "email": "lelouch@marzuki.com",
     "password": "saikoucreator"
 }
 
 
 ### Logout
 POST http://localhost:3000/auth/logout
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjFiNzhiNTg2NGI4NzliZDZjNDAyNWEiLCJpZCI6MSwiZW1haWwiOiJtZUBtYXJ6dWtpLmNvbSIsImlhdCI6MTU5NTk1MjU4MiwiZXhwIjoxNTk2MjExNzgyfQ.ZojJ9kJLKgtOgDpKSLzPJkOaQZw1xz25e5oi1do_koo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjJkZmMwODBlNTdhYzVmOTM0NTMzYzUiLCJpZCI6MSwiZW1haWwiOiJsZWxvdWNoQG1hcnp1a2kuY29tIiwiaWF0IjoxNTk2ODQ5MjExLCJleHAiOjE1OTcxMDg0MTF9.9dXwPAhG87W3XZ8wXbUIgJEFVyvcTU-MrtNHiFZwuTM
 
