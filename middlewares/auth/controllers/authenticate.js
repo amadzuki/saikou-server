@@ -5,7 +5,6 @@ const authenticate = async (req, res, next) => {
     const payload = {
       _id: req.user._id,
       id: req.user.id,
-      //   username: req.user.username, // not implemented yet
       email: req.user.email,
     }
 
