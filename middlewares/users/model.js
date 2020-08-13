@@ -21,6 +21,17 @@ const UserSchema = new mongoose.Schema(
     },
     avatar: {
       type: String,
+      required: true,
+    },
+    bio: {
+      type: String,
+      required: true,
+    },
+    favoriteAnime: {
+      type: Array,
+    },
+    favoriteManga: {
+      type: Array,
     },
   },
   {
