@@ -1,87 +1,87 @@
 [
   {
     "id": 1,
-    "alias": "lelouch",
+    "alias": "Lelouch",
     "avatar": "/avatars/chibi-lelouch.jpg"
   },
   {
     "id": 2,
-    "alias": "c2",
+    "alias": "C2",
     "avatar": "/avatars/chibi-c2.jpg"
   },
   {
     "id": 3,
-    "alias": "goku",
+    "alias": "Goku",
     "avatar": "/avatars/chibi-goku.jpg"
   },
   {
     "id": 4,
-    "alias": "hiruma",
+    "alias": "Hiruma",
     "avatar": "/avatars/chibi-hiruma.jpg"
   },
   {
     "id": 5,
-    "alias": "hitsugaya",
+    "alias": "Hitsugaya",
     "avatar": "/avatars/chibi-hitsugaya.jpg"
   },
   {
     "id": 6,
-    "alias": "l",
+    "alias": "L",
     "avatar": "/avatars/chibi-l.jpg"
   },
   {
     "id": 7,
-    "alias": "luffy",
+    "alias": "Luffy",
     "avatar": "/avatars/chibi-luffy.jpg"
   },
   {
     "id": 8,
-    "alias": "meliodas",
+    "alias": "Meliodas",
     "avatar": "/avatars/chibi-meliodas.jpg"
   },
   {
     "id": 9,
-    "alias": "mikasa",
+    "alias": "Mikasa",
     "avatar": "/avatars/chibi-mikasa.jpg"
   },
   {
     "id": 10,
-    "alias": "miyamura",
+    "alias": "Miyamura",
     "avatar": "/avatars/chibi-miyamura.jpg"
   },
   {
     "id": 11,
-    "alias": "nao",
+    "alias": "Nao",
     "avatar": "/avatars/chibi-nao.jpg"
   },
   {
     "id": 12,
-    "alias": "naofumi",
+    "alias": "Naofumi",
     "avatar": "/avatars/chibi-naofumi.jpg"
   },
   {
     "id": 13,
-    "alias": "naruto",
+    "alias": "Naruto",
     "avatar": "/avatars/chibi-naruto.jpg"
   },
   {
     "id": 14,
-    "alias": "saitama",
+    "alias": "Saitama",
     "avatar": "/avatars/chibi-saitama.jpg"
   },
   {
     "id": 15,
-    "alias": "sasuke",
+    "alias": "Sasuke",
     "avatar": "/avatars/chibi-sasuke.jpg"
   },
   {
     "id": 16,
-    "alias": "shiro",
+    "alias": "Shiro",
     "avatar": "/avatars/chibi-shiro.jpg"
   },
   {
     "id": 17,
-    "alias": "tanjiro",
+    "alias": "Tanjiro",
     "avatar": "/avatars/chibi-tanjiro.jpg"
   }
 ]
