@@ -1,25 +1,14 @@
-const jwt = require('jsonwebtoken')
+const User = require('../../users/model')
 
 const isAuthorized = async (req, res, next) => {
-  try {
-    const accessToken = req.headers.authorization.split(' ')[1]
-    if (accessToken) {
-      await jwt.verify(accessToken, process.env.JWT_SECRET, (err, result) => {
-        if (result) {
-          req.decodedAccessToken = result
-          next()
-        } else {
-          res.status(500).send({
-            message: 'Token is not verified',
-          })
-        }
-      })
-    }
-  } catch (error) {
-    console.error(error)
-    res.status(400).send({
-      message: 'The user is unable to authorize',
-      error: 'Token is not provided in the Authorization header',
+  const _id = req.params._id
+  const user = await User.findById(req.decodedAccessToken._id)
+  if (user._id.equals(_id)) {
+    next()
+  } else {
+    res.status(401).send({
+      messaga: 'The user is unauthorized to perform this call',
+      error: 'Id inside token does not match with the expected user',
     })
   }
 }

@@ -5,9 +5,8 @@ GET http://localhost:3000/users
 GET http://localhost:3000/users/1
 
 ### Get user profile 
-GET http://localhost:3000/users/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjJkZmMwODBlNTdhYzVmOTM0NTMzYzUiLCJpZCI6MSwiZW1haWwiOiJsZWxvdWNoQG1hcnp1a2kuY29tIiwiaWF0IjoxNTk2ODQ5MjExLCJleHAiOjE1OTcxMDg0MTF9.9dXwPAhG87W3XZ8wXbUIgJEFVyvcTU-MrtNHiFZwuTM
-
+GET http://localhost:3000/users/5f413f05d068dda6b5ee51fa/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjQxM2YwNWQwNjhkZGE2YjVlZTUxZmEiLCJpZCI6OCwiZW1haWwiOiJsdWZmeUBzYWlrb3UuY29tIiwiaWF0IjoxNTk4MTEyMjYwLCJleHAiOjE1OTgzNzE0NjB9.GQ9l-9LelsgZUstgapUJJgy_CZayatBxT7FXye9Df0g
 
 
 ### Register new user
@@ -15,7 +14,7 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "email": "lelouch@marzuki.com",
+    "email": "luffy@saikou.com",
     "password": "saikoucreator"
 }
 
@@ -25,7 +24,7 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email": "lelouch@marzuki.com",
+    "email": "luffy@saikou.com",
     "password": "saikoucreator"
 }
 

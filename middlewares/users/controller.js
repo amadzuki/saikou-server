@@ -33,7 +33,7 @@ module.exports = {
     const userProfile = await User.findById(mongoId)
 
     res.status(200).send({
-      message: 'Token authorized successfully',
+      message: 'Token authenticated successfully',
       data: userProfile,
     })
   },

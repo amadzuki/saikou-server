@@ -10,5 +10,5 @@ router.post(
   auth.isPasswordCorrect,
   auth.authenticate
 )
-router.post('/logout', auth.isAuthorized, auth.deauthenticate)
+router.post('/logout', auth.isAuthenticated, auth.deauthenticate)
 module.exports = router

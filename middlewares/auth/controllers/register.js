@@ -19,7 +19,7 @@ const register = async (req, res) => {
       alias: randomAliases[random].alias,
       avatar: randomAliases[random].avatar,
       bio:
-        'I am too busy watching anime and reading manga that I do not bother edit my own bio. Even when the edit profile button is just few pixels away',
+        'I am too busy watching anime and reading manga that I do not bother edit my own bio. Even when the edit profile button is just few pixels away. I am fine with the generated alias (username) and avatar.',
     })
 
     res.status(200).send({ message: 'Registration completed' })
