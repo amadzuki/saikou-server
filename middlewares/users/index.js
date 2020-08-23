@@ -18,6 +18,11 @@ router.get(
 router.get('/:id', users.getById)
 
 // PUT edit logged in user data
-router.put('/:_id/profile', auth.isAuthenticated, auth.isAuthorized)
+router.put(
+  '/:_id/profile',
+  auth.isAuthenticated,
+  auth.isAuthorized,
+  users.updateUserProfile
+)
 
 module.exports = router

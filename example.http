@@ -2,7 +2,7 @@
 GET http://localhost:3000/users 
 
 ### Get user by id
-GET http://localhost:3000/users/1
+GET http://localhost:3000/users/9
 
 ### Get user profile 
 GET http://localhost:3000/users/5f413f05d068dda6b5ee51fa/profile
@@ -33,3 +33,12 @@ Content-Type: application/json
 POST http://localhost:3000/auth/logout
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjJkZmMwODBlNTdhYzVmOTM0NTMzYzUiLCJpZCI6MSwiZW1haWwiOiJsZWxvdWNoQG1hcnp1a2kuY29tIiwiaWF0IjoxNTk2ODQ5MjExLCJleHAiOjE1OTcxMDg0MTF9.9dXwPAhG87W3XZ8wXbUIgJEFVyvcTU-MrtNHiFZwuTM
 
+
+### Set Favorite Anime / Manga
+PUT http://localhost:3000/users/5f41cda14c1f722f9ba7b8cd/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjQxY2RhMTRjMWY3MjJmOWJhN2I4Y2QiLCJpZCI6OSwiZW1haWwiOiJsdWZmeUBzYWlrb3UuY29tIiwiaWF0IjoxNTk4MTQ4MDAzLCJleHAiOjE1OTg0MDcyMDN9.FuUyJhyPLFCpJQsDY34P_vyOgIiqLCsCvPQHV2SyKfE
+Content-Type: application/json
+
+{
+    "favoriteAnime": [17, 20, 5]
+}
