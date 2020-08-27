@@ -51,7 +51,7 @@ module.exports = {
 
     const updatedUser = await User.findByIdAndUpdate(mongoId, body, {
       new: true,
-      select: '-hash -_id',
+      select: '-hash -_id -__v -updatedAt',
     })
 
     res.status(200).send({
