@@ -3,9 +3,24 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "pm2:dev": "pm2 startOrGracefulReload ecosystem.config.js --env development",
+    "pm2:staging": "pm2 startOrGracefulReload ecosystem.config.js --env staging",
+    "pm2:production": "pm2 startOrGracefulReload ecosystem.config.js --env production",
+    "pm2:list": "pm2 list",
+    "pm2:logs": "pm2 logs template-api",
+    "pm2:flush": "pm2 flush template-api",
+    "pm2:stop": "pm2 stop all",
+    "pm2:delete": "pm2 delete all",
+    "pm2:deploy:setup": "pm2 deploy ecosystem.config.js production setup",
+    "pm2:deploy": "pm2 deploy ecosystem.config.js production",
+    "debug": "NODE_ENV=development nodemon src/index.js",
+    "test": "NODE_ENV=test jest",
+    "lint": "eslint . --ext .js",
     "postinstall": "./setup.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amadzuki/saikou-server.git"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -15,6 +30,7 @@
     "cors": "^2.8.5",
     "debug": "~4.1.1",
     "dotenv": "^8.2.0",
+    "dotenv-flow": "^3.2.0",
     "express": "~4.17.1",
     "http-errors": "~1.8.0",
     "jade": "~1.11.0",

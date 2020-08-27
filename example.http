@@ -40,5 +40,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjQxY2RhM
 Content-Type: application/json
 
 {
-    "favoriteAnime": [17, 20, 5]
+    "favoriteManga": []
 }
