@@ -1,7 +1,7 @@
 const mongoose = require('../../config/mongoose')
 const AutoIncrement = require('mongoose-sequence')(mongoose)
 
-const UserSchema = new mongoose.Schema(
+const MangaSchema = new mongoose.Schema(
   {
     name: String,
     coverSrc: String,
@@ -16,8 +16,8 @@ const UserSchema = new mongoose.Schema(
   }
 )
 
-UserSchema.plugin(AutoIncrement, { id: 'manga_counter', inc_field: 'id' })
+MangaSchema.plugin(AutoIncrement, { id: 'manga_counter', inc_field: 'id' })
 
-const Manga = mongoose.model('Manga', UserSchema)
+const Manga = mongoose.model('Manga', MangaSchema)
 
 module.exports = Manga

@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const manga = require('./controller')
+const manga = require('./controllers')
 const auth = require('../auth/controllers')
 
 router.get('/', manga.getAll)
