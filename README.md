@@ -28,3 +28,25 @@ Saikou back end server
 | `PUT`    | `/users/:id` | Update user by id |
 | `DELETE` | `/users/:id` | Delete user by id |
 | `DELETE` | `/users`     | Delete all users  |
+
+### Anime
+
+| HTTP     | Endpoint     | Description        |
+| -------- | ------------ | ------------------ |
+| `GET`    | `/anime`     | Get all anime      |
+| `GET`    | `/anime/:id` | Get anime by id    |
+| `POST`   | `/anime`     | Add new anime      |
+| `PUT`    | `/anime/:id` | Update anime by id |
+| `DELETE` | `/anime/:id` | Delete anime by id |
+| `DELETE` | `/anime`     | Delete all anime   |
+
+### Manga
+
+| HTTP     | Endpoint     | Description        |
+| -------- | ------------ | ------------------ |
+| `GET`    | `/manga`     | Get all manga      |
+| `GET`    | `/manga/:id` | Get manga by id    |
+| `POST`   | `/manga`     | Add new manga      |
+| `PUT`    | `/manga/:id` | Update manga by id |
+| `DELETE` | `/manga/:id` | Delete manga by id |
+| `DELETE` | `/manga`     | Delete all manga   |

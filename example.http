@@ -5,8 +5,8 @@ GET http://localhost:3000/users
 GET http://localhost:3000/users/9
 
 ### Get user profile 
-GET http://localhost:3000/users/5f413f05d068dda6b5ee51fa/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjQxM2YwNWQwNjhkZGE2YjVlZTUxZmEiLCJpZCI6OCwiZW1haWwiOiJsdWZmeUBzYWlrb3UuY29tIiwiaWF0IjoxNTk4MTEyMjYwLCJleHAiOjE1OTgzNzE0NjB9.GQ9l-9LelsgZUstgapUJJgy_CZayatBxT7FXye9Df0g
+GET http://localhost:3000/users/5f41cda14c1f722f9ba7b8cd/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjQxY2RhMTRjMWY3MjJmOWJhN2I4Y2QiLCJpZCI6OSwiZW1haWwiOiJsdWZmeUBzYWlrb3UuY29tIiwiaWF0IjoxNTk4NzA3ODA3LCJleHAiOjE1OTg5NjcwMDd9.0nuTK-DLP_fPvgRLEPDv0qxFciOp78NOYx3csbNPa50
 
 
 ### Register new user
@@ -42,3 +42,56 @@ Content-Type: application/json
 {
     "favoriteAnime": [17, 20, 5]
 }
+
+### Get all manga
+GET http://localhost:3000/manga 
+
+### Get manga by id
+GET http://localhost:3000/manga/7
+
+### Add new manga
+POST http://localhost:3000/manga
+Content-Type: application/json
+
+[{
+    "name": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "coverSrc": "/covers/anime_ReZero-kara-Hajimeru-Isekai-Seikatsu.png",
+    "coverAlt": "Re:Zero kara Hajimeru Isekai Seikatsu anime cover",
+    "slug": "rezero-kara-hajimeru-isekai-seikatsu",
+    "description": "<p>When Subaru Natsuki leaves the convenience store, the last thing he expects is to be wrenched from his everyday life and dropped into a fantasy world. Things aren't looking good for the bewildered teenager; however, not long after his arrival, he is attacked by some thugs. Armed with only a bag of groceries and a now useless cell phone, he is quickly beaten to a pulp. Fortunately, a mysterious beauty named Satella, in hot pursuit after the one who stole her insignia, happens upon Subaru and saves him. In order to thank the honest and kindhearted girl, Subaru offers to help in her search, and later that night, he even finds the whereabouts of that which she seeks. But unbeknownst to them, a much darker force stalks the pair from the shadows, and just minutes after locating the insignia, Subaru and Satella are brutally murdered.</p><p>However, Subaru immediately reawakens to a familiar scene—confronted by the same group of thugs, meeting Satella all over again—the enigma deepens as history inexplicably repeats itself.</p>",
+    "tagLine": "Normal boy without power but turning back time just like save point in games... albeit, by dying. Numerous depiction of 'death' really feels like... real"
+},
+{
+    "name": "Saiki Kusuo no Ψ-nan",
+    "coverSrc": "/covers/anime_Saiki-Kusuo-no-sainan.png",
+    "coverAlt": "Saiki Kusuo no Ψ-nan anime cover",
+    "slug": "saiki-kusuo-no-psi-nan",
+    "description": "<p>To the average person, psychic abilities might seem a blessing; for Kusuo Saiki, however, this couldn't be further from the truth. Gifted with a wide assortment of supernatural abilities ranging from telepathy to x-ray vision, he finds this so-called blessing to be nothing but a curse. As all the inconveniences his powers cause constantly pile up, all Kusuo aims for is an ordinary, hassle-free life—a life where ignorance is bliss.</p><p>Unfortunately, the life of a psychic is far from quiet. Though Kusuo tries to stay out of the spotlight by keeping his powers a secret from his classmates, he ends up inadvertently attracting the attention of many odd characters, such as the empty-headed Riki Nendou and the delusional Shun Kaidou. Forced to deal with the craziness of the people around him, Kusuo comes to learn that the ordinary life he has been striving for is a lot more difficult to achieve than expected.</p>",
+    "tagLine": "An hilarious low-energy gag comedy. It uses the power of 5 min attention span and high speed incantation dialogues to deliver a climax and a cliff hanger at once. Yare yare…."
+},
+{
+    "name": "Shingeki no Kyojin",
+    "coverSrc": "/covers/anime_Shingeki-no-Kyojin.png",
+    "coverAlt": "Shingeki no Kyojin anime cover",
+    "slug": "shingeki-no-kyojin",
+    "description": "<p>Centuries ago, mankind was slaughtered to near extinction by monstrous humanoid creatures called titans, forcing humans to hide in fear behind enormous concentric walls. What makes these giants truly terrifying is that their taste for human flesh is not born out of hunger but what appears to be out of pleasure. To ensure their survival, the remnants of humanity began living within defensive barriers, resulting in one hundred years without a single titan encounter. However, that fragile calm is soon shattered when a colossal titan manages to breach the supposedly impregnable outer wall, reigniting the fight for survival against the man-eating abominations.</p><p>After witnessing a horrific personal loss at the hands of the invading creatures, Eren Yeager dedicates his life to their eradication by enlisting into the Survey Corps, an elite military unit that combats the merciless humanoids outside the protection of the walls. Based on Hajime Isayama's award-winning manga, Shingeki no Kyojin follows Eren, along with his adopted sister Mikasa Ackerman and his childhood friend Armin Arlert, as they join the brutal war against the titans and race to discover a way of defeating them before the last walls are breached.</p>",
+    "tagLine": "On that day, mankind received a grim reminder. We lived in fear of the titans, and were disgraced to live in these cages we called walls."
+}]
+
+### Update manga data
+PUT http://localhost:3000/manga/7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjQxY2RhMTRjMWY3MjJmOWJhN2I4Y2QiLCJpZCI6OSwiZW1haWwiOiJsdWZmeUBzYWlrb3UuY29tIiwiaWF0IjoxNTk4NzA3ODA3LCJleHAiOjE1OTg5NjcwMDd9.0nuTK-DLP_fPvgRLEPDv0qxFciOp78NOYx3csbNPa50
+Content-Type: application/json
+
+{
+    "favorited": false,
+    "name": "Re:Zero kara Hajimeru Isekai Seikatsu"
+}
+
+### Delete one manga
+DELETE http://localhost:3000/manga/1
+
+### Delete all manga
+DELETE http://localhost:3000/manga
+
+

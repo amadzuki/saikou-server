@@ -3,22 +3,16 @@ const User = require('./model')
 module.exports = {
   getAll: async (req, res, next) => {
     const allUsers = await User.find()
-    res.status(200).send({ title: 'List of users', users: allUsers })
+    res.status(200).send({ title: 'List of users', data: allUsers })
   },
 
   getById: async (req, res, next) => {
     const userId = Number(req.params.id)
     try {
-      const user = await User.findOne({ id: userId })
+      const userData = await User.findOne({ id: userId }, '-hash -_id')
 
-      const userData = {
-        id: user.id,
-        alias: user.alias,
-        avatar: user.avatar,
-        dateJoined: user.createdAt,
-      }
-      if (user) {
-        res.status(200).send({ title: 'User details', user: userData })
+      if (userData) {
+        res.status(200).send({ title: 'User details', data: userData })
       } else {
         res.status(400).send({ message: 'user is not found' })
       }
@@ -30,7 +24,7 @@ module.exports = {
 
   getUserProfile: async (req, res, next) => {
     const mongoId = req.decodedAccessToken._id
-    const userProfile = await User.findById(mongoId, '-hash -_id')
+    const userProfile = await User.findById(mongoId, '-hash')
 
     res.status(200).send({
       message: 'Token authenticated successfully',

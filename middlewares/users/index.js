@@ -6,6 +6,9 @@ const auth = require('../auth/controllers')
 /* GET users listing. */
 router.get('/', users.getAll)
 
+// GET another user profile
+router.get('/:id', users.getById)
+
 // GET detailed user profile at login
 router.get(
   '/:_id/profile',
@@ -13,9 +16,6 @@ router.get(
   auth.isAuthorized,
   users.getUserProfile
 )
-
-// GET another user profile
-router.get('/:id', users.getById)
 
 // PUT edit logged in user data
 router.put(
