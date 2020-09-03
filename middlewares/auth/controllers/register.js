@@ -1,5 +1,5 @@
 const User = require('../../users/model')
-const randomAliases = require('../../../data/randomAliases.json')
+const randomAvatars = require('../../../data/randomAliases.json')
 const bcrypt = require('bcrypt')
 
 const register = async (req, res) => {
@@ -16,8 +16,8 @@ const register = async (req, res) => {
     await User.create({
       email: req.body.email,
       hash: hash,
-      alias: randomAliases[random].alias,
-      avatar: randomAliases[random].avatar,
+      alias: req.body.alias || randomAvatars[random].alias,
+      avatar: randomAvatars[random].avatar,
       bio:
         'I am too busy watching anime and reading manga that I do not bother edit my own bio. Even when the edit profile button is just few pixels away. I am fine with the generated alias (username) and avatar.',
     })
