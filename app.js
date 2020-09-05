@@ -11,6 +11,7 @@ const usersRouter = require('./middlewares/users/index')
 const authRouter = require('./middlewares/auth/index')
 const mangaRouter = require('./middlewares/manga/index')
 const animeRouter = require('./middlewares/anime/index')
+const searchRouter = require('./middlewares/search')
 
 const app = express()
 
@@ -26,6 +27,7 @@ app.use('/users', usersRouter)
 app.use('/auth', authRouter)
 app.use('/manga', mangaRouter)
 app.use('/anime', animeRouter)
+app.use('/search', searchRouter)
 
 // error handler
 app.use(function (err, req, res, next) {
