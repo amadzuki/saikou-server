@@ -51,6 +51,8 @@ There are 3 repos in the project: `saikou` is for documentary, `saikou-client` i
 - **Express** — Minimal and flexible Node.js web application framework
 - **MongoDB** — Cross-platform document-oriented database program
   - **Mongoose** — Schema-based Object-Data Modeling (ODM) for MongoDB
+    - **Mongoose Unique Validator** — A plugin which adds pre-save validation for unique fields within a Mongoose schema.
+    - **Mongoose Auto Increment** — A plugin that auto-increments any ID field on your schema every time a document is saved.
 - **`morgan`** — HTTP request logger middleware for Node.js
 - **`cors`** — Express middleware that to enable CORS with various options
 - **`bcrypt`** — Library to hash passwords
