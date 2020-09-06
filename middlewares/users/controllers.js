@@ -53,4 +53,28 @@ module.exports = {
       data: { user: updatedUser },
     })
   },
+
+  deleteById: async (req, res, next) => {
+    const user = await User.findOne({ id: req.params.id })
+
+    if (user) {
+      await User.deleteOne({ id: req.params.id })
+      res
+        .status(200)
+        .send({
+          message: 'Successfully deleted one user',
+          data: { deletedUser: user },
+        })
+    } else {
+      res.status(412).send({ message: 'user is not exists' })
+    }
+  },
+
+  deleteAll: async (req, res, next) => {
+    const report = await User.deleteMany({})
+    res.status(200).send({
+      message: 'All users deleted',
+      data: { deletedUsersCount: report.deletedCount },
+    })
+  },
 }

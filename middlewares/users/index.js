@@ -25,4 +25,8 @@ router.put(
   users.updateUserProfile
 )
 
+router.delete('/', users.deleteAll)
+
+router.delete('/:id', users.deleteById)
+
 module.exports = router
