@@ -95,7 +95,6 @@ There are 3 repos in the project: `saikou` is for documentary, `saikou-client` i
 | -------- | ------------ | ----------------- |
 | `GET`    | `/users`     | Get all users     |
 | `GET`    | `/users/:id` | Get user by id    |
-| `POST`   | `/users`     | Add new user      |
 | `PUT`    | `/users/:id` | Update user by id |
 | `DELETE` | `/users/:id` | Delete user by id |
 | `DELETE` | `/users`     | Delete all users  |
