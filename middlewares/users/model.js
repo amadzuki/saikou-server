@@ -30,12 +30,18 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    favoriteAnime: {
-      type: Array,
-    },
-    favoriteManga: {
-      type: Array,
-    },
+    favoriteAnime: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Anime',
+      },
+    ],
+    favoriteManga: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Manga',
+      },
+    ],
   },
   {
     timestamps: true,

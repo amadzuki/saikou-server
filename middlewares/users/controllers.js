@@ -2,14 +2,20 @@ const User = require('./model')
 
 module.exports = {
   getUsers: async (req, res, next) => {
-    const users = await User.find(req.query, 'id alias avatar')
+    const users = await User.find(
+      req.query,
+      'id alias avatar favoriteAnime favoriteManga'
+    )
     res.status(200).send({ title: 'List of users', data: users })
   },
 
   getById: async (req, res, next) => {
     const userId = Number(req.params.id)
     try {
-      const userData = await User.findOne({ id: userId }, '-hash')
+      const userData = await User.findOne({ id: userId }, '-hash').populate(
+        'favoriteAnime',
+        'favoriteManga'
+      )
 
       if (userData) {
         res.status(200).send({ title: 'User details', data: userData })
