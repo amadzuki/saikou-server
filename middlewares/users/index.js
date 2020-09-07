@@ -4,7 +4,7 @@ const users = require('./controllers')
 const auth = require('../auth/controllers')
 
 /* GET users listing. */
-router.get('/', users.getAll)
+router.get('/', users.getUsers)
 
 // GET another user profile
 router.get('/:id', users.getById)
@@ -24,6 +24,8 @@ router.put(
   auth.isAuthorized,
   users.updateUserProfile
 )
+
+router.put('/:id', users.adminUpdateUser)
 
 router.delete('/', users.deleteAll)
 

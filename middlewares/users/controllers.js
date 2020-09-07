@@ -1,15 +1,15 @@
 const User = require('./model')
 
 module.exports = {
-  getAll: async (req, res, next) => {
-    const allUsers = await User.find()
-    res.status(200).send({ title: 'List of users', data: allUsers })
+  getUsers: async (req, res, next) => {
+    const users = await User.find(req.query, 'id alias avatar')
+    res.status(200).send({ title: 'List of users', data: users })
   },
 
   getById: async (req, res, next) => {
     const userId = Number(req.params.id)
     try {
-      const userData = await User.findOne({ id: userId }, '-hash -_id')
+      const userData = await User.findOne({ id: userId }, '-hash')
 
       if (userData) {
         res.status(200).send({ title: 'User details', data: userData })
@@ -54,17 +54,37 @@ module.exports = {
     })
   },
 
+  adminUpdateUser: async (req, res, next) => {
+    const id = req.params.id
+    const user = await User.findOne({ id: id })
+    const body = {
+      alias: req.body.alias || user.alias,
+      bio: req.body.bio || user.bio,
+      avatar: req.body.avatar || user.avatar,
+      favoriteAnime: req.body.favoriteAnime || user.favoriteAnime,
+      favoriteManga: req.body.favoriteManga || user.favoriteManga,
+    }
+
+    const updatedUser = await User.findOneAndUpdate({ id: id }, body, {
+      new: true,
+      select: '-hash -_id -__v -updatedAt',
+    })
+
+    res.status(200).send({
+      message: 'User profile updated successfully',
+      data: { user: updatedUser },
+    })
+  },
+
   deleteById: async (req, res, next) => {
     const user = await User.findOne({ id: req.params.id })
 
     if (user) {
       await User.deleteOne({ id: req.params.id })
-      res
-        .status(200)
-        .send({
-          message: 'Successfully deleted one user',
-          data: { deletedUser: user },
-        })
+      res.status(200).send({
+        message: 'Successfully deleted one user',
+        data: { deletedUser: user },
+      })
     } else {
       res.status(412).send({ message: 'user is not exists' })
     }
