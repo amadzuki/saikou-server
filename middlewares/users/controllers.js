@@ -30,7 +30,10 @@ module.exports = {
 
   getUserProfile: async (req, res, next) => {
     const mongoId = req.decodedAccessToken._id
-    const userProfile = await User.findById(mongoId, '-hash')
+    const userProfile = await User.findById(mongoId, '-hash').populate(
+      'favoriteAnime favoriteManga',
+      '-slug -description -tagLine'
+    )
 
     res.status(200).send({
       message: 'Token authenticated successfully',
