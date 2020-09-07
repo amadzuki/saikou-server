@@ -63,8 +63,8 @@ module.exports = {
   },
 
   updateAnimeData: async (req, res, next) => {
-    const animeId = req.params.id
-    const anime = await Anime.findOne({ id: animeId })
+    const animeId = req.params._id
+    const anime = await Anime.findById(animeId)
     const body = {
       name: req.body.name || anime.name,
       coverSrc: req.body.coverSrc || anime.coverSrc,

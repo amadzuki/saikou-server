@@ -9,7 +9,7 @@ router.get('/:id', manga.getById)
 
 router.post('/', manga.addManga)
 
-router.put('/:id', auth.isAuthenticated, manga.updateMangaData)
+router.put('/:_id', auth.isAuthenticated, manga.updateMangaData)
 
 router.delete('/', manga.deleteAllManga)
 

@@ -63,8 +63,8 @@ module.exports = {
   },
 
   updateMangaData: async (req, res, next) => {
-    const mangaId = req.params.id
-    const manga = await Manga.findOne({ id: mangaId })
+    const mangaId = req.params._id
+    const manga = await Manga.findById(mangaId)
     const body = {
       name: req.body.name || manga.name,
       coverSrc: req.body.coverSrc || manga.coverSrc,

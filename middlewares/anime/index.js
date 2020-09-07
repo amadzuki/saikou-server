@@ -9,7 +9,7 @@ router.get('/:id', anime.getById)
 
 router.post('/', anime.addAnime)
 
-router.put('/:id', auth.isAuthenticated, anime.updateAnimeData)
+router.put('/:_id', auth.isAuthenticated, anime.updateAnimeData)
 
 router.delete('/', anime.deleteAllAnime)
 
