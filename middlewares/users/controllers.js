@@ -13,8 +13,8 @@ module.exports = {
     const userId = Number(req.params.id)
     try {
       const userData = await User.findOne({ id: userId }, '-hash').populate(
-        'favoriteAnime',
-        'favoriteManga'
+        'favoriteAnime favoriteManga',
+        '-slug -description -tagLine'
       )
 
       if (userData) {
