@@ -63,8 +63,8 @@ module.exports = {
   },
 
   updateAnimeData: async (req, res, next) => {
-    const animeId = req.params._id
-    const anime = await Anime.findById(animeId)
+    const animeId = req.params.id
+    const anime = await Anime.findOne({ id: animeId })
     const body = {
       name: req.body.name || anime.name,
       coverSrc: req.body.coverSrc || anime.coverSrc,
@@ -78,12 +78,12 @@ module.exports = {
       body.favoritedBy.push(req.decodedAccessToken._id)
     } else {
       body.favoritedBy = anime.favoritedBy.filter(
-        (_id) => req.decodedAccessToken._id != _id
+        (_id) => req.decodedAccessToken._id !== _id
       )
     }
     const updatedAnime = await Anime.findOneAndUpdate({ id: animeId }, body, {
       new: true,
-      select: ' -_id -__v',
+      select: '-__v',
     })
 
     res.status(200).send({

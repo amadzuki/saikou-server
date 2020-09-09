@@ -30,15 +30,19 @@ module.exports = {
 
   getUserProfile: async (req, res, next) => {
     const mongoId = req.decodedAccessToken._id
-    const userProfile = await User.findById(mongoId, '-hash').populate(
-      'favoriteAnime favoriteManga',
-      '-slug -description -tagLine'
-    )
+    try {
+      const userProfile = await User.findById(mongoId, '-hash').populate(
+        'favoriteAnime favoriteManga',
+        '-slug -description -tagLine'
+      )
 
-    res.status(200).send({
-      message: 'Token authenticated successfully',
-      data: userProfile,
-    })
+      res.status(200).send({
+        message: 'Token authenticated successfully',
+        data: userProfile,
+      })
+    } catch (error) {
+      res.status(500).send({ message: 'error find by mongoId', error: error })
+    }
   },
 
   updateUserProfile: async (req, res, next) => {
@@ -51,16 +55,19 @@ module.exports = {
       favoriteAnime: req.body.favoriteAnime || user.favoriteAnime,
       favoriteManga: req.body.favoriteManga || user.favoriteManga,
     }
+    try {
+      const updatedUser = await User.findByIdAndUpdate(mongoId, body, {
+        new: true,
+        select: '-hash -updatedAt',
+      }).populate('favoriteAnime favoriteManga', '-slug -description -tagLine')
 
-    const updatedUser = await User.findByIdAndUpdate(mongoId, body, {
-      new: true,
-      select: '-hash -_id -__v -updatedAt',
-    })
-
-    res.status(200).send({
-      message: 'User profile updated successfully',
-      data: { user: updatedUser },
-    })
+      res.status(200).send({
+        message: 'User profile updated successfully',
+        data: { user: updatedUser },
+      })
+    } catch (error) {
+      res.status(500).send({ message: 'update data error', error: error })
+    }
   },
 
   adminUpdateUser: async (req, res, next) => {
