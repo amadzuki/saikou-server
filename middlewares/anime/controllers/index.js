@@ -5,4 +5,5 @@ module.exports = {
   deleteAnimeById: require('./deleteAnimeById'),
   deleteAllAnime: require('./deleteAllAnime'),
   updateAnimeData: require('./updateAnimeData'),
+  seed: require('./seed'),
 }
