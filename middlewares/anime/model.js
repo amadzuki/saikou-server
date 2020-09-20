@@ -3,10 +3,6 @@ const AutoIncrement = require('mongoose-sequence')(mongoose)
 
 const AnimeSchema = new mongoose.Schema(
   {
-    _id: {
-      type: Number,
-      unique: true,
-    },
     name: {
       type: String,
       unique: true,
@@ -22,13 +18,12 @@ const AnimeSchema = new mongoose.Schema(
     favoritedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   },
   {
-    _id: false,
     collection: 'anime',
     timestamps: true,
   }
 )
 
-AnimeSchema.plugin(AutoIncrement)
+AnimeSchema.plugin(AutoIncrement, { id: 'anime_counter', inc_field: 'id' })
 
 const Anime = mongoose.model('Anime', AnimeSchema)
 
