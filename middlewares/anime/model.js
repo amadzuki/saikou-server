@@ -3,15 +3,22 @@ const AutoIncrement = require('mongoose-sequence')(mongoose)
 
 const AnimeSchema = new mongoose.Schema(
   {
-    name: String,
-    coverSrc: String,
+    name: {
+      type: String,
+      unique: true,
+    },
+    coverUrl: String,
     coverAlt: String,
     slug: String,
     description: String,
-    tagLine: String,
+    tagLine: {
+      type: String,
+      maxlength: 193,
+    },
     favoritedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   },
   {
+    collection: 'anime',
     timestamps: true,
   }
 )

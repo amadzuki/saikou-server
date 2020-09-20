@@ -3,8 +3,11 @@ const AutoIncrement = require('mongoose-sequence')(mongoose)
 
 const MangaSchema = new mongoose.Schema(
   {
-    name: String,
-    coverSrc: String,
+    name: {
+      type: String,
+      unique: true,
+    },
+    coverUrl: String,
     coverAlt: String,
     slug: String,
     description: String,
@@ -12,6 +15,7 @@ const MangaSchema = new mongoose.Schema(
     favoritedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   },
   {
+    collection: 'manga',
     timestamps: true,
   }
 )

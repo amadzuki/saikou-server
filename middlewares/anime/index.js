@@ -15,4 +15,6 @@ router.delete('/', anime.deleteAllAnime)
 
 router.delete('/:id', anime.deleteAnimeById)
 
+router.post('/seed', anime.deleteAllAnime, anime.seed)
+
 module.exports = router
