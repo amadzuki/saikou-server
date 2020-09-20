@@ -17,7 +17,7 @@ const register = async (req, res) => {
       email: req.body.email,
       hash: hash,
       alias: req.body.alias || randomAvatars[random].alias,
-      avatar: randomAvatars[random].avatar,
+      avatar: `${process.env.API_URL}${randomAvatars[random].avatar}`,
       bio:
         'I am too busy watching anime and reading manga that I do not bother edit my own bio. Even when the edit profile button is just few pixels away. I am fine with the generated alias (username) and avatar.',
     })
