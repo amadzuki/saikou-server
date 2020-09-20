@@ -5,4 +5,5 @@ module.exports = {
   deleteAllManga: require('./deleteAllManga'),
   deleteMangaById: require('./deleteMangaById'),
   updateMangaData: require('./updateMangaData'),
+  seed: require('./seed'),
 }

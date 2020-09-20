@@ -15,4 +15,6 @@ router.delete('/', manga.deleteAllManga)
 
 router.delete('/:id', manga.deleteMangaById)
 
+router.post('/seed', manga.deleteAllManga, manga.seed)
+
 module.exports = router

@@ -7,7 +7,7 @@ const MangaSchema = new mongoose.Schema(
       type: String,
       unique: true,
     },
-    coverSrc: String,
+    coverUrl: String,
     coverAlt: String,
     slug: String,
     description: String,
