@@ -22,25 +22,25 @@
     "url": "https://github.com/amadzuki/saikou-server.git"
   },
   "dependencies": {
-    "bcrypt": "^5.0.0",
+    "bcrypt": "^5.0.1",
     "cookie-parser": "~1.4.5",
     "cors": "^2.8.5",
-    "debug": "~4.1.1",
+    "debug": "~4.3.1",
     "dotenv": "^8.2.0",
     "express": "~4.17.1",
     "http-errors": "~1.8.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.25",
-    "mongoose-sequence": "^5.2.2",
+    "mongoose": "^5.12.3",
+    "mongoose-sequence": "^5.3.1",
     "mongoose-unique-validator": "^2.0.3",
     "morgan": "~1.10.0"
   },
   "devDependencies": {
-    "eslint": "^7.5.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "nodemon": "^2.0.4",
-    "pm2": "^4.4.1",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "nodemon": "^2.0.7",
+    "pm2": "^4.5.6",
     "prettier": "^2.2.1"
   }
 }
