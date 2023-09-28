@@ -6,3 +6,5 @@
   from = "/*"
   status = 200
   to = "/.netlify/functions/:splat"
+[build]
+  command = yarn run pm2:production
